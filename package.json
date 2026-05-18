@@ -1,0 +1,14 @@
+{
+  "name": "inhome-design",
+  "version": "1.0.0",
+  "description": "Website gioi thieu va tu van thiet ke noi that INHOME Design",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.22.2",
+    "express-session": "^1.19.0",
+    "helmet": "^7.2.0"
+  }
+}
