@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Be Vietnam Pro", Arial, sans-serif;
+    background: #f5efe6;
+    color: #1e1a16;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: "Be Vietnam Pro", Arial, sans-serif;
+}
+
+section {
+    padding: 100px 80px;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
+}
+
+.section-title p,
+.section-label,
+.eyebrow {
+    color: #d8b77c;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 14px;
+    font-weight: 900;
+    margin-bottom: 18px;
+}
+
+.section-title h2,
+.about-content h2,
+.contact-content h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    color: #1e1a16;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 28px;
+    border-radius: 40px;
+    font-weight: 900;
+}
+
+.btn.primary {
+    background: #d8b77c;
+    color: #1e1a16;
+}
+
+.btn.outline {
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+}

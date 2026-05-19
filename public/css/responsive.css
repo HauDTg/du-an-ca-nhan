@@ -1,0 +1,171 @@
+@media (max-width: 1200px) {
+    .topbar {
+        display: none;
+    }
+
+    .header {
+        padding: 14px 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 70px 40px;
+        min-height: 620px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-card {
+        display: none;
+    }
+
+    .about,
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid,
+    .project-grid,
+    .process-grid,
+    .price-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer {
+        grid-template-columns: 1.5fr 1fr;
+        padding: 60px 40px 45px;
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        justify-content: space-between;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #fffaf2;
+        border-radius: 18px;
+        padding: 18px;
+        border: 1px solid #e4d3bd;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-btn {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 60px 24px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-desc {
+        font-size: 16px;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+    }
+
+    .hero-stats div {
+        width: 100%;
+    }
+
+    section,
+    .about,
+    .contact,
+    .partners {
+        padding: 65px 24px;
+    }
+
+    .partners {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-img {
+        height: 420px;
+    }
+
+    .section-title h2,
+    .about-content h2,
+    .contact-content h2 {
+        font-size: 34px;
+    }
+
+    .about-grid,
+    .service-grid,
+    .project-grid,
+    .process-grid,
+    .price-grid,
+    .footer {
+        grid-template-columns: 1fr;
+    }
+
+    .price-card.highlight {
+        transform: none;
+    }
+
+    .footer-bottom {
+        padding: 20px 24px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-bottom div {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 560px) {
+    .logo h2 {
+        font-size: 17px;
+        letter-spacing: 1.5px;
+    }
+
+    .logo-mark {
+        width: 42px;
+        height: 42px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        text-align: center;
+        width: 100%;
+    }
+
+    form {
+        padding: 24px;
+    }
+
+    .experience-box {
+        position: static;
+        width: 100%;
+        margin-top: 18px;
+    }
+}

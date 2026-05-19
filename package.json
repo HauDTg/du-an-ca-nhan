@@ -1,14 +1,14 @@
 {
-  "name": "inhome-design",
+  "name": "du-an-ca-nhan",
   "version": "1.0.0",
-  "description": "Website gioi thieu va tu van thiet ke noi that INHOME Design",
+  "description": "Website công ty thiết kế nội thất INHOME Design",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.22.2",
-    "express-session": "^1.19.0",
-    "helmet": "^7.2.0"
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "express-session": "^1.17.3"
   }
 }
