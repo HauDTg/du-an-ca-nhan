@@ -2,9 +2,47 @@ const express = require("express");
 const path = require("path");
 const helmet = require("helmet");
 const session = require("express-session");
+const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Email configuration
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_APP_PASSWORD
+    }
+});
+
+// Function to send email
+async function sendEmailNotification(contactData) {
+    try {
+        const mailOptions = {
+            from: process.env.GMAIL_USER,
+            to: process.env.ADMIN_EMAIL,
+            subject: `Yêu cầu tư vấn mới từ ${contactData.fullname}`,
+            html: `
+                <h2>Yêu cầu tư vấn mới</h2>
+                <p><b>Họ tên:</b> ${contactData.fullname}</p>
+                <p><b>Số điện thoại:</b> ${contactData.phone}</p>
+                <p><b>Email:</b> ${contactData.email}</p>
+                <p><b>Dịch vụ:</b> ${contactData.service}</p>
+                <p><b>Nội dung:</b> ${contactData.message}</p>
+                <p><b>Thời gian:</b> ${contactData.createdAt}</p>
+                <hr>
+                <p><a href="https://dinhtronghau.top/admin">Xem chi tiết tại Admin Panel</a></p>
+            `
+        };
+
+        await transporter.sendMail(mailOptions);
+        console.log("Email sent successfully to " + process.env.ADMIN_EMAIL);
+    } catch (error) {
+        console.error("Error sending email:", error);
+    }
+}
 
 app.use(
     helmet({
@@ -30,8 +68,8 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 
 let contacts = [];
 
-const ADMIN_USERNAME = "admin";
-const ADMIN_PASSWORD = "admin";
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin";
 
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "index.html"));
@@ -52,6 +90,9 @@ app.post("/contact", function (req, res) {
     };
 
     contacts.unshift(newContact);
+
+    // Send email notification
+    sendEmailNotification(newContact);
 
     res.json({
         success: true,
